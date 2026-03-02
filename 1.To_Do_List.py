@@ -47,9 +47,10 @@ def del_task(a):
         c=int(input("Enter the task no. that you want to Delete:"))
     except ValueError:
         print("Invalid character. TRY AGAIN !!")
+        return 
     if 1<=c<=len(a):
-        a.pop(c-1)
-        print(f"Task '{c}' Deleted Successfully.")
+        b= a.pop(c-1)
+        print(f"Task '{b}' Deleted Successfully.")
     else:
         print("Task not found.")
 def clr_lst(a):
@@ -61,7 +62,7 @@ def save_exit(a):
         with open("TO_DO_.txt","w") as f:
             for i in range (0,len(a)): 
                 f.write(f"{i+1}.{a[i]}\n")
-    if d=="n":
+    if d.lower()=="n":
         print("File not saved !")
 print("Welcome User , Good Morning!")
 a=input("Are you ready to make your to do list ? (y/n)")
@@ -69,5 +70,4 @@ if a.lower()=="y":
     to_do_list()
 else:
     print("hope to see you NEXT TIME")
-
-    exit
+    exit()
