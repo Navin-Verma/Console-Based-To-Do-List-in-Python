@@ -1,3 +1,9 @@
+# Expense Tracker (Python)
+
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+
 # Python CLI To-Do List Manager
 
 A simple command-line based To-Do List application built using Python.
