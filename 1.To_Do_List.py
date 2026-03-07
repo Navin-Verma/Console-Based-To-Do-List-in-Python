@@ -2,7 +2,7 @@
 def to_do_list():
     a=[]
     while(1):
-        print("1.Add a task")
+        print("\n1.Add a task")
         print("2.Show task")
         print("3.Delete task")
         print("4.Delete whole list")
@@ -30,18 +30,29 @@ def to_do_list():
                 return
             case _:
                 print("Invalid choice choose AGAIN !")
+#NO.1
 def add_task(a):
-    t=input("Enter a task:")
-    a.append(t)
-    if len(a)>14:#setting up a limit so that users do not add unnecessary tasks at all
-        print("Too many tasks.")
+    try:
+        y=int(input("HOW MANY TASK YOU WANT TO ADD (max=14):"))
+    except ValueError:
+        print("INVALID !!")
+        return
+    for i in range(y):
+        t=input("Enter a task:")
+        if t in a:
+            print("THIS TASK LREADY EXISTS !!")
+        else:
+            a.append(t)
+        if len(a)>14:#setting up a limit so that users do not add unnecessary tasks at all
+            print("Too many tasks.")
+#NO.2
 def show_task(a):
     if len(a)>0:
         for i in range (0,len(a)):
             print(i+1,a[i])
-            print("\n")
     else:
         print("Sorry, but the task list is EMPTY !!")
+#NO.3
 def del_task(a):
     try:
         c=int(input("Enter the task no. that you want to Delete:"))
@@ -53,9 +64,11 @@ def del_task(a):
         print(f"Task '{b}' Deleted Successfully.")
     else:
         print("Task not found.")
+#NO.4
 def clr_lst(a):
     a.clear()
     print(a)
+#NO.5
 def save_exit(a):
     d=input("Do you want to save the file ? (y/n):")
     if d.lower() =="y":
