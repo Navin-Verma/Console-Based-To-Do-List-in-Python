@@ -56,7 +56,7 @@ cd Console-Based-To-Do-List-in-Python
 
 ## Project Screenshots
 
-<img width="445" height="578" alt="image" src="https://github.com/user-attachments/assets/ea1ade47-5b71-43b1-a0b0-842eb1d33180" />
+<img width="374" height="551" alt="image" src="https://github.com/user-attachments/assets/9a204067-4dcb-427b-add7-f6a19bb18642" />
 
 
 ## Future Improvements
