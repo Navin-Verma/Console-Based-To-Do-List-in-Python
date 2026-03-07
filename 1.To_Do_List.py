@@ -43,8 +43,9 @@ def add_task(a):
             print("THIS TASK LREADY EXISTS !!")
         else:
             a.append(t)
-        if len(a)>14:#setting up a limit so that users do not add unnecessary tasks at all
-            print("Too many tasks.")
+        if len(a)>=14:#setting up a limit so that users do not add unnecessary tasks at all
+            print("YOU REACHED THE TASK ADDING LIMIT !!")
+            return
 #NO.2
 def show_task(a):
     if len(a)>0:
@@ -66,8 +67,15 @@ def del_task(a):
         print("Task not found.")
 #NO.4
 def clr_lst(a):
-    a.clear()
-    print(a)
+    b=input("Are you sure to clear the entire list?(y/n):")
+    if b.lower()=="y":  
+        a.clear()
+        print("The List is now EMPTY !!")
+    elif b.lower()=="n":
+        return
+    else:
+        ("INVALID CHOICE !!")
+        return    
 #NO.5
 def save_exit(a):
     d=input("Do you want to save the file ? (y/n):")
@@ -75,6 +83,7 @@ def save_exit(a):
         with open("TO_DO_.txt","w") as f:
             for i in range (0,len(a)): 
                 f.write(f"{i+1}.{a[i]}\n")
+        print("FILE SUCCESSFULLY SAVED !!")
     if d.lower()=="n":
         print("File not saved !")
 print("Welcome User , Good Morning!")
