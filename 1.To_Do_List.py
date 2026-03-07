@@ -74,7 +74,7 @@ def clr_lst(a):
     elif b.lower()=="n":
         return
     else:
-        ("INVALID CHOICE !!")
+        print("INVALID CHOICE !!")
         return    
 #NO.5
 def save_exit(a):
@@ -93,3 +93,4 @@ if a.lower()=="y":
 else:
     print("hope to see you NEXT TIME")
     exit()
+
