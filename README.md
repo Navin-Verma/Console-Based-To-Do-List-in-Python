@@ -54,8 +54,10 @@ cd Console-Based-To-Do-List-in-Python
 3. Run the script:
  python To_Do_List.py
 
-## Sample Output
-<img width="331" height="158" alt="image" src="https://github.com/user-attachments/assets/0f1ef2f1-ace1-4402-8bea-557bc13b3ccc" />
+## Project Screenshots
+
+<img width="445" height="578" alt="image" src="https://github.com/user-attachments/assets/ea1ade47-5b71-43b1-a0b0-842eb1d33180" />
+
 
 ## Future Improvements
 
@@ -70,4 +72,5 @@ cd Console-Based-To-Do-List-in-Python
 ## Author
 
 **Navin Verma :**
-Python | To Do List
+Python | To Do List (CLI)
+
