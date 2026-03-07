@@ -7,7 +7,8 @@ def to_do_list():
         print("3.Delete task")
         print("4.Delete whole list")
         print("5.Save as text file")
-        print("6.Exit")
+        print("6.Load file")
+        print("7.Exit")
         try:
             b=int(input("Enter the number:"))
         except ValueError:
@@ -26,7 +27,9 @@ def to_do_list():
                 clr_lst(a)
             case 5:#5.Exit
                 save_exit(a)
-            case 6:#Exit
+            case 6:
+                load_file(a)
+            case 7:#Exit
                 return
             case _:
                 print("Invalid choice choose AGAIN !")
@@ -40,12 +43,12 @@ def add_task(a):
     for i in range(y):
         t=input("Enter a task:")
         if t in a:
-            print("THIS TASK LREADY EXISTS !!")
+            print("THIS TASK ALREADY EXISTS !!")
         else:
             a.append(t)
         if len(a)>=14:#setting up a limit so that users do not add unnecessary tasks at all
             print("YOU REACHED THE TASK ADDING LIMIT !!")
-            return
+            break
 #NO.2
 def show_task(a):
     if len(a)>0:
@@ -80,12 +83,26 @@ def clr_lst(a):
 def save_exit(a):
     d=input("Do you want to save the file ? (y/n):")
     if d.lower() =="y":
-        with open("TO_DO_.txt","w") as f:
+        with open("TO_DO.txt","w") as f:
             for i in range (0,len(a)): 
                 f.write(f"{i+1}.{a[i]}\n")
         print("FILE SUCCESSFULLY SAVED !!")
     if d.lower()=="n":
         print("File not saved !")
+#NO.6
+def load_file(a):
+    try:
+        with open("TO_DO.txt", "r") as f:
+            a.clear()
+            for line in f:
+                line = line.strip()
+                if line:
+                    _, task = line.split(".", 1)
+                    a.append(task)
+        print("Data loaded successfully!")
+    except FileNotFoundError:
+        print("No saved file found.")
+        return
 print("Welcome User , Good Morning!")
 a=input("Are you ready to make your to do list ? (y/n)")
 if a.lower()=="y":
@@ -93,4 +110,3 @@ if a.lower()=="y":
 else:
     print("hope to see you NEXT TIME")
     exit()
-
